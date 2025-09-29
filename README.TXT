@@ -64,7 +64,8 @@ while(found == false) {
             if(num % test == 0){
                 return false;
             }
-        return true;
+        test++
         }
+return true;
 }
 38. i could not find a findFirst method
