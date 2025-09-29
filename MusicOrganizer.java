@@ -96,6 +96,14 @@ public class MusicOrganizer
             }
         }
     }
+    public void listByGenre(String genre) //31
+    {
+        for(Track aTrack : trackList) {
+            if(aTrack.getGenre().contains(genre)) {
+                System.out.println(aTrack.getDetails());
+            }
+        }
+    }
     
     /**
      * Remove a track from the collection.
@@ -107,6 +115,17 @@ public class MusicOrganizer
             trackList.remove(index);
         }
     }
+    public void removeAllContaining(String keyword){ //39
+        int counter = 0;
+        for(Track track : trackList){
+            if(track.getTitle().contains(keyword)){
+                trackList.remove(counter);
+            }
+            else{
+                counter++;
+            }
+        }
+    }
     
     /**
      * Play a track in the collection.
@@ -115,6 +134,7 @@ public class MusicOrganizer
     public void playTrack(int index)
     {
         if(validIndex(index)) {
+            stopPlaying(); //32
             Track track = trackList.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());

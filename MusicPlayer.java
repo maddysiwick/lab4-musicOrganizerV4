@@ -92,10 +92,12 @@ public class MusicPlayer
             player = new AdvancedPlayer(is, createAudioDevice());
         }
         catch (IOException e) {
+            System.out.println("1");
             reportProblem(filename);
             killPlayer();
         }
         catch(JavaLayerException e) {
+            System.out.println("2");
             reportProblem(filename);
             killPlayer();
         }
