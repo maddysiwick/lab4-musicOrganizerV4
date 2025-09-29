@@ -115,15 +115,11 @@ public class MusicOrganizer
             trackList.remove(index);
         }
     }
-    public void removeAllContaining(String keyword){ //39 THIS IS SO WRONG SHOULD BE AN ITERATOR
-        int counter = 0;
-        for(Track track : trackList){
-            if(track.getTitle().contains(keyword)){
-                trackList.remove(counter);
-            }
-            else{
-                counter++;
-            }
+    public void removeAllContaining(String keyword){ //39
+        Iterator<Track> it = trackList.iterator();
+        while(it.hasNext()){
+            if(it.next.getTitle().contains(keyword)){
+                it.remove;
         }
     }
     
