@@ -115,7 +115,7 @@ public class MusicOrganizer
             trackList.remove(index);
         }
     }
-    public void removeAllContaining(String keyword){ //39
+    public void removeAllContaining(String keyword){ //39 THIS IS SO WRONG SHOULD BE AN ITERATOR
         int counter = 0;
         for(Track track : trackList){
             if(track.getTitle().contains(keyword)){
